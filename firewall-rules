@@ -1,0 +1,4 @@
+AzureDiagnostics
+| where Category == "AzureFirewallNetworkRule"
+| where msg_s contains "Deny"
+| summarize count() by src_ip_s, dst_ip_s, msg_s
